@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.loader {
+  @apply border-t-blue-500 animate-spin;
+}
+
+.fascinate-inline-regular {
+  font-family: "Fascinate Inline", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.doto-regular {
+  font-family: "Doto", serif;
+  font-optical-sizing: auto;
+  font-weight: 406        ;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 100;
+}
+.audioContainer {
+  background-color: var(--customBackgroundColor);
+  border: 1px solid var(--customTextColor);
+  padding: 0.5rem;
+}
+
+.customAudio {
+  --webkit-appearance: none;
+  appearance: none;
+}
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.editor {
+  border: 1px solid #ccc;
+  padding: 8px;
+  min-height: 200px;
+}
+.customAudio::-webkit-media-controls-panel {
+  background-color: var(--customBackgroundColor);
+  border-radius: 0;
+}
+
+.customAudio::-webkit-media-controls-play-button,
+.customAudio::-webkit-media-controls-timeline,
+.customAudio::-webkit-media-controls-current-time-display,
+.customAudio::-webkit-media-controls-time-remaining-display,
+.customAudio::-webkit-media-controls-timeline-container,
+.customAudio::-webkit-media-controls-volume-slider-container,
+.customAudio::-webkit-media-controls-volume-slider,
+.customAudio::-webkit-media-controls-seek-back-button,
+.customAudio::-webkit-media-controls-seek-forward-button,
+.customAudio::-webkit-media-controls-fullscreen-button,
+.customAudio::-webkit-media-controls-rewind-button,
+.customAudio::-webkit-media-controls-return-to-realtime-button,
+.customAudio::-webkit-media-controls-toggle-closed-captions-button {
+  border-radius: 0;
+  color: var(--customTextColor);
+}
+
+.customAudio::-webkit-media-controls-timeline {
+  background-color: var(--customTextColor);
+  border-radius: 0;
+  height: 2px;
+}
+
+.customAudio::-webkit-media-controls-volume-slider {
+  background-color: var(--customTextColor);
+  border-radius: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.customAudio::-webkit-media-controls-play-button {
+  background-color: transparent;
+  border: 1px solid var(--customTextColor);
+}
+
+.customAudio::-webkit-media-controls-current-time-display,
+.customAudio::-webkit-media-controls-time-remaining-display {
+  color: var(--customTextColor);
+  font-family: monospace;
+}
+.monoton-regular {
+  font-family: "Monoton", sans-serif;
+  font-weight: 400; 
+  font-style: normal;
+}
+
+:root {
+  --background-color: #121212; /* Default to dark mode colors */
+  --text-color: #fdfdfd;
+  --custom-color: #555555;
+  --colorIwant: #151517;
+  --DecentColor:#1b154b;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+  --background-color: #fdfdfd;
+  --text-color: #121212;
+  --custom-color: #ddd;
+  --colorIwant: #ffffff;
+  --DecentColor:#dddddd;
+}
