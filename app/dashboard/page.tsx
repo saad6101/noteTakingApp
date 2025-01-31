@@ -88,7 +88,7 @@ export default function Main() {
                         type="text"
                         value={noteHeading}
                         onChange={(e) => setNoteHeading(e.target.value)}
-                        className="w-full bg-customColor2 p-2 mb-4 border rounded-md doto-regular text-xl"
+                        className="w-full bg-customColor2 p-2 mb-4 border rounded-md font-mono text-xl"
                         placeholder="Note Heading"
                     />
                     {noteType === 'Voice' ? (
@@ -96,7 +96,7 @@ export default function Main() {
                             <button
                                 type="button"
                                 onClick={startRecording}
-                                className="w-full bg-blue-500 text-white py-2 rounded-md doto-regular"
+                                className="w-full bg-blue-500 text-white py-2 rounded-md font-mono"
                                 disabled={recording}
                             >
                                 {recording ? 'Recording...' : 'Start Recording'}
@@ -105,7 +105,7 @@ export default function Main() {
                                 <button
                                     type="button"
                                     onClick={stopRecording}
-                                    className="w-full bg-red-500 text-white py-2 rounded-md mt-2 doto-regular"
+                                    className="w-full bg-red-500 text-white py-2 rounded-md mt-2 font-mono"
                                 >
                                     Stop Recording
                                 </button>
@@ -123,67 +123,13 @@ export default function Main() {
                     {noteType !== 'Voice' && (
                         <button
                             type="submit"
-                            className="mt-2 w-full bg-blue-500 text-white py-2 rounded-md doto-regular"
+                            className="mt-2 w-full bg-blue-500 text-white py-2 rounded-md text-xl font-mono"
                         >
                             Save Note
                         </button>
                     )}
                 </form>
                 </h1>
-
-            </div>
-            {/* Settings Panel */}
-            <div className="fixed bottom-4 right-4 bg-white p-4 rounded-md shadow-md">
-                <h2 className="text-lg font-bold mb-2">Settings</h2>
-                <div className="mb-2">
-                    <label className="block text-sm font-medium mb-1">Font Size</label>
-                    <input
-                        type="number"
-                        value={parseInt(fontSize)}
-                        onChange={(e) => setFontSize(`${e.target.value}px`)}
-                        className="w-full p-2 border rounded-md"
-                    />
-                </div>
-                <div className="mb-2">
-                    <label className="block text-sm font-medium mb-1">Font Family</label>
-                    <select
-                        value={fontFamily}
-                        onChange={(e) => setFontFamily(e.target.value)}
-                        className="w-full p-2 border rounded-md"
-                    >
-                        <option value="Doto">Doto</option>
-                        <option value="Courier New">Courier New</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Verdana">Verdana</option>
-                    </select>
-                </div>
-                <div className="mb-2">
-                    <label className="block text-sm font-medium mb-1">Formatting</label>
-                    <div className="flex space-x-2">
-                        <button
-                            type="button"
-                            onClick={() => setIsBold(!isBold)}
-                            className={`px-2 py-1 border rounded-md ${isBold ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-                        >
-                            B
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => setIsItalic(!isItalic)}
-                            className={`px-2 py-1 border rounded-md ${isItalic ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-                        >
-                            I
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => setIsUnderline(!isUnderline)}
-                            className={`px-2 py-1 border rounded-md ${isUnderline ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-                        >
-                            U
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     );

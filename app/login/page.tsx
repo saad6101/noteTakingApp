@@ -29,7 +29,7 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 font-mono">
             <h1 className="text-xl md:text-4xl font-bold text-center mb-6 fascinate-inline-regular transition-all duration-500 monoton-regular">
                 {isLogin ? 'Login' : 'Sign Up'}
             </h1>
