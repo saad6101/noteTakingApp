@@ -1,14 +1,14 @@
 "use client";
 import { SetStateAction, useEffect } from 'react';
 
-export function validateUserInputs(email: string, setEmailError: { (value: SetStateAction<string>): void; (arg0: string): void; }, password: string, setPasswordError: { (value: SetStateAction<string>): void; (arg0: string): void; }) {
+export function useValidateUserInputs(email: string, setEmailError: (value: SetStateAction<string>) => void, password: string, setPasswordError: (value: SetStateAction<string>) => void) {
     useEffect(() => {
         if (email && !validateEmail(email)) {
             setEmailError('Invalid email format');
         } else {
             setEmailError('');
         }
-    }, [email]);
+    }, [email, setEmailError]);
 
     useEffect(() => {
         if (password && !validatePassword(password)) {
@@ -16,7 +16,7 @@ export function validateUserInputs(email: string, setEmailError: { (value: SetSt
         } else {
             setPasswordError('');
         }
-    }, [password]);
+    }, [password, setPasswordError]);
 
     const validateEmail = (email: string) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {initializeSecretKey} from '@/initializeSecretKey';
-import { validateUserInputs } from "../components/validateUserInputs";
+import { useValidateUserInputs } from "../components/validateUserInputs";
 import { handleAuthRequest } from '../components/handleAuthRequest';
 
 
@@ -21,7 +21,7 @@ export default function Login() {
     const [passwordError, setPasswordError] = useState('');
     const [emailError, setEmailError] = useState('');
 
-    validateUserInputs(email, setEmailError, password, setPasswordError);
+    useValidateUserInputs(email, setEmailError, password, setPasswordError);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
